@@ -19,14 +19,14 @@ public class App {
         } else if (choice == 2) {
             System.out.println("Your choice is 2");
             System.out.println("Welcome to the Brain Games!");
-            System.out.println("May i have your name");
-            String name = scanner.nextLine();
+            System.out.println("May i have your name?");
+            String name = scanner.next();
             Engine.playEvenGame(scanner, name);
         } else if (choice == 3) {
             System.out.println("Your choice is 3");
             System.out.println("Welcome to the Brain Games!");
-            System.out.println("May i have your name");
-            String name = scanner.nextLine();
+            System.out.println("May i have your name?");
+            String name = scanner.next();
             Engine.calculatorGame(scanner, name);
         } else {
             System.out.println("Please, make sure that you chose the right number");

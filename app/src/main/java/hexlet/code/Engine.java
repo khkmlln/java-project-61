@@ -6,7 +6,7 @@ public class Engine {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May i have your name");
-        String name = scanner.nextLine();
+        String name = scanner.next();
         System.out.println("Hello, " + name + "!");
         playEvenGame(scanner, name);
         calculatorGame(scanner, name);
@@ -14,12 +14,13 @@ public class Engine {
     }
 
     public static void playEvenGame(Scanner scanner, String name) {
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int countOfCorrectAnswers = 0;
         for (int i = 0; i < 3; i++) {
             int number = random.nextInt();
             System.out.println("Question: " + number);
-            String answer = scanner.nextLine();
+            String answer = scanner.next();
             System.out.println("Your answer: " + answer);
             if ((number % 2 == 0 && answer.equals("yes")) || (number % 2 != 0 && answer.equals("no"))) {
                 System.out.println("Correct!");
@@ -36,6 +37,7 @@ public class Engine {
     }
 
     public static void calculatorGame(Scanner scanner, String name) {
+        System.out.println("What is the result of the expression?");
         Random random = new Random();
         int countCorrectAnswers = 0;
         for (int i = 0; i < 3; i++) {
@@ -56,7 +58,7 @@ public class Engine {
             }
         }
         if (countCorrectAnswers == 3) {
-            System.out.println("Congratulations!");
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 
