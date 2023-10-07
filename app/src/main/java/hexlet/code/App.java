@@ -9,6 +9,7 @@ public class App {
         System.out.println("3 - Calculator");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
@@ -42,6 +43,12 @@ public class App {
             System.out.println("May i have your name?");
             String name = scanner.next();
             Engine.progressionGame(scanner, name);
+        } else if (choice == 6) {
+            System.out.println("Your choice is 6");
+            System.out.println("Welcome to the Brain games!");
+            System.out.println("May i have your name?");
+            String name = scanner.next();
+            Engine.primeGame(scanner, name);
         } else {
             System.out.println("Please, make sure that you chose the right number");
         }

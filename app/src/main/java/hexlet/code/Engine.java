@@ -117,6 +117,28 @@ public static void progressionGame(Scanner scanner, String name) {
     }
 }
 
+public static void primeGame(Scanner scanner, String name) {
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        Random random = new Random();
+        int rightAnswersOnly = 0;
+        for (int i = 0; i < 3; i++) {
+            int number = random.nextInt(100);
+            System.out.println("Question " + number);
+            System.out.println("Your answer: ");
+            String answerOfUser = scanner.next();
+            if (isPrime(number) && answerOfUser.equals("yes") || !isPrime(number) && answerOfUser.equals("no")) {
+                System.out.println("Correct!");
+                rightAnswersOnly++;
+            } else {
+                System.out.println("'" + answerOfUser + "'" + "is wrong answer ;(. Correct answer was '" + (isPrime(number) ? "yes" : "no") + "'");
+                System.out.println("Let's try again, " + name);
+                break;
+            }
+        }
+            if (rightAnswersOnly == 3) {
+                System.out.println("Congratulations, " + name + "!");
+            }
+        }
     private static char getRandomOperator() {
         Random random = new Random();
         int varietyOfOperator = random.nextInt(3);
@@ -166,4 +188,16 @@ public static void progressionGame(Scanner scanner, String name) {
     }
     return sb.toString().trim();
     }
+
+    public static boolean isPrime(int number) {
+    if (number <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
 }
