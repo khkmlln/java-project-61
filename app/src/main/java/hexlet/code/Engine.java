@@ -10,6 +10,8 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         playEvenGame(scanner, name);
         calculatorGame(scanner, name);
+        gcdGame(scanner, name);
+        progressionGame(scanner, name);
         System.out.println("Congratulations, " + name);
     }
 
@@ -61,6 +63,59 @@ public class Engine {
             System.out.println("Congratulations, " + name + "!");
         }
     }
+public static void gcdGame(Scanner scanner, String name) {
+    System.out.println("Find the greatest common divisor of given numbers.");
+    Random random = new Random();
+    int rightAnswersCount = 0;
+    for (int i = 0; i < 3; i++) {
+        int number1 = random.nextInt(100);
+        int number2 = random.nextInt(100);
+        int rightAnswer = calculateGCD(number1, number2);
+        System.out.println("Question: " + number1 + " " + number2);
+        System.out.println("Your answer: ");
+        int userAnswer = scanner.nextInt();
+        if (userAnswer == rightAnswer) {
+            System.out.println("Correct!");
+            rightAnswersCount++;
+        } else {
+            System.out.println("'" + userAnswer + " is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
+            System.out.println("Let's try again, " + name);
+            break;
+        }
+    }
+    if (rightAnswersCount == 3) {
+        System.out.println("Congratulations, " + name + "!");
+    }
+}
+public static void progressionGame(Scanner scanner, String name) {
+    System.out.println("What number is missing in the progression?");
+    Random random = new Random();
+    int theRightResult = 0;
+    for (int i = 0; i < 3; i++) {
+        int startNumber = random.nextInt(50);
+        int step = random.nextInt(10) + 1;
+        int length = random.nextInt(6) + 5;
+        int hiddenN = random.nextInt(length);
+        int[] progression = generateArithmeticProgression(startNumber, step, length);
+        progression[hiddenN] = -1;
+        String question = getProgressionAsString(progression);
+        int rightAnswer = startNumber + step * hiddenN;
+        System.out.println("Question: " + question);
+        System.out.println("Your answer: ");
+        int userAnswer = scanner.nextInt();
+        if (userAnswer == rightAnswer) {
+            System.out.println("Correct!");
+            theRightResult++;
+        } else {
+            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
+            System.out.println("Let's try again, " + name + "!");
+            break;
+        }
+    }
+    if (theRightResult == 3) {
+        System.out.println("Congratulations, " + name + "!");
+    }
+}
 
     private static char getRandomOperator() {
         Random random = new Random();
@@ -82,5 +137,33 @@ public class Engine {
         } else {
             return number1 * number2;
         }
+    }
+    private static int calculateGCD(int number1, int number2) {
+        while (number2 != 0) {
+            int temp = number2;
+            number2 = number1 % number2;
+            number1 = temp;
+        }
+        return number1;
+    }
+    private static int[] generateArithmeticProgression(int startNumber, int step, int length) {
+        int[] progression = new int[length];
+        progression[0] = startNumber;
+        for (int i = 1; i < length; i++) {
+            progression[i] = progression[i - 1] + step;
+        }
+        return progression;
+    }
+
+    private static String getProgressionAsString(int[] progression) {
+    StringBuilder sb = new StringBuilder();
+    for (int number : progression) {
+        if (number == -1) {
+            sb.append(".. ");
+        } else {
+            sb.append(number).append(" ");
+        }
+    }
+    return sb.toString().trim();
     }
 }

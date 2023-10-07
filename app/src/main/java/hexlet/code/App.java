@@ -7,14 +7,16 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calculator");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
         if (choice == 1) {
-            System.out.println("Your choice = 1");
+            System.out.println("Your choice is 1");
             Cli.greetUser();
         } else if (choice == 0) {
-            System.out.println("Your choice = 0");
+            System.out.println("Your choice is 0");
             System.out.println("Bye");
         } else if (choice == 2) {
             System.out.println("Your choice is 2");
@@ -28,6 +30,18 @@ public class App {
             System.out.println("May i have your name?");
             String name = scanner.next();
             Engine.calculatorGame(scanner, name);
+        } else if (choice == 4) {
+            System.out.println("Your choice is 4");
+            System.out.println("Welcome to the Brain games!");
+            System.out.println("May i have your name?");
+            String name = scanner.next();
+            Engine.gcdGame(scanner, name);
+        } else if (choice == 5) {
+            System.out.println("Your choice is 5");
+            System.out.println("Welcome to the Brain games!");
+            System.out.println("May i have your name?");
+            String name = scanner.next();
+            Engine.progressionGame(scanner, name);
         } else {
             System.out.println("Please, make sure that you chose the right number");
         }
