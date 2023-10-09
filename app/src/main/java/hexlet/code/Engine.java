@@ -128,7 +128,7 @@ public static void primeGame(Scanner scanner, String name) {
         int rightAnswersOnly = 0;
         for (int i = 0; i < 3; i++) {
             int number = random.nextInt(100);
-            System.out.println("Question " + number);
+            System.out.println("Question: " + number);
             System.out.println("Your answer: ");
             String answerOfUser = scanner.next();
             if (isPrime(number) && answerOfUser.equals("yes") || !isPrime(number) && answerOfUser.equals("no")) {
