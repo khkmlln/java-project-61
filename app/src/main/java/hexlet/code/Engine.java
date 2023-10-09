@@ -33,7 +33,9 @@ public class Engine {
                 System.out.println("Correct!");
                 countOfCorrectAnswers++;
             } else {
-                System.out.println("'" + answer + " is wrong answer ;(. Correct answer was '" + (number % 2 == 0 ? "yes" : "no") + "'");
+
+                System.out.println("'" + answer + " is wrong answer ;(. Correct answer was '" +
+                        (number % 2 == 0 ? "yes" : "no") + "'");
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
@@ -60,7 +62,8 @@ public class Engine {
                 System.out.println("Correct!");
                 countCorrectAnswers++;
             } else {
-                System.out.println("'" + yourNumber + "'" + " is wrong answer ;( Correct answer was " + "'" + rightAnswer + "'.");
+                System.out.println("'" + yourNumber + "'" + " is wrong answer ;( Correct answer was " +
+                        "'" + rightAnswer + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
@@ -115,7 +118,8 @@ public static void progressionGame(Scanner scanner, String name) {
             System.out.println("Correct!");
             theRightResult++;
         } else {
-            System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
+            System.out.println("'" + userAnswer + "'" +
+                    " is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
             System.out.println("Let's try again, " + name + "!");
             break;
         }
@@ -139,7 +143,8 @@ public static void primeGame(Scanner scanner, String name) {
                 System.out.println("Correct!");
                 rightAnswersOnly++;
             } else {
-                System.out.println("'" + answerOfUser + "'" + "is wrong answer ;(. Correct answer was '" + (isPrime(number) ? "yes" : "no") + "'");
+                System.out.println("'" + answerOfUser + "'" + "is wrong answer ;(. Correct answer was '" +
+                        (isPrime(number) ? "yes" : "no") + "'");
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
