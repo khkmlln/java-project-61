@@ -30,7 +30,7 @@ public class Engine {
                 countOfCorrectAnswers++;
             } else {
                 System.out.println("'" + answer + " is wrong answer ;(. Correct answer was '" + (number % 2 == 0 ? "yes" : "no") + "'");
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 break;
             }
         }
@@ -82,7 +82,7 @@ public static void gcdGame(Scanner scanner, String name) {
             rightAnswersCount++;
         } else {
             System.out.println("'" + userAnswer + " is wrong answer ;(. Correct answer was '" + rightAnswer + "'");
-            System.out.println("Let's try again, " + name);
+            System.out.println("Let's try again, " + name + "!");
             break;
         }
     }
@@ -136,7 +136,7 @@ public static void primeGame(Scanner scanner, String name) {
                 rightAnswersOnly++;
             } else {
                 System.out.println("'" + answerOfUser + "'" + "is wrong answer ;(. Correct answer was '" + (isPrime(number) ? "yes" : "no") + "'");
-                System.out.println("Let's try again, " + name);
+                System.out.println("Let's try again, " + name + "!");
                 break;
             }
         }
