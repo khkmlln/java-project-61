@@ -16,6 +16,7 @@ public class Engine {
     }
 
     public static void playEvenGame(Scanner scanner, String name) {
+        System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int countOfCorrectAnswers = 0;
@@ -39,6 +40,7 @@ public class Engine {
     }
 
     public static void calculatorGame(Scanner scanner, String name) {
+        System.out.println("Hello, " + name + "!");
         System.out.println("What is the result of the expression?");
         Random random = new Random();
         int countCorrectAnswers = 0;
@@ -64,6 +66,7 @@ public class Engine {
         }
     }
 public static void gcdGame(Scanner scanner, String name) {
+    System.out.println("Hello, " + name + "!");
     System.out.println("Find the greatest common divisor of given numbers.");
     Random random = new Random();
     int rightAnswersCount = 0;
@@ -88,6 +91,7 @@ public static void gcdGame(Scanner scanner, String name) {
     }
 }
 public static void progressionGame(Scanner scanner, String name) {
+    System.out.println("Hello, " + name + "!");
     System.out.println("What number is missing in the progression?");
     Random random = new Random();
     int theRightResult = 0;
@@ -118,6 +122,7 @@ public static void progressionGame(Scanner scanner, String name) {
 }
 
 public static void primeGame(Scanner scanner, String name) {
+        System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
         int rightAnswersOnly = 0;
