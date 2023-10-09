@@ -20,7 +20,8 @@ public class Engine {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Random random = new Random();
         int countOfCorrectAnswers = 0;
-        for (int i = 0; i < 3; i++) {
+        int bound = 3;
+        for (int i = 0; i < bound; i++) {
             int number = random.nextInt();
             System.out.println("Question: " + number);
             String answer = scanner.next();
@@ -34,7 +35,7 @@ public class Engine {
                 break;
             }
         }
-        if (countOfCorrectAnswers == 3) {
+        if (countOfCorrectAnswers == bound) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
@@ -44,9 +45,11 @@ public class Engine {
         System.out.println("What is the result of the expression?");
         Random random = new Random();
         int countCorrectAnswers = 0;
-        for (int i = 0; i < 3; i++) {
-            int number1 = random.nextInt(100);
-            int number2 = random.nextInt(100);
+        int bound = 3;
+        int boundariesForRandom = 100;
+        for (int i = 0; i < bound; i++) {
+            int number1 = random.nextInt(boundariesForRandom);
+            int number2 = random.nextInt(boundariesForRandom);
             char operator = getRandomOperator();
             int rightAnswer = calculateExpression(number1, number2, operator);
             System.out.println("Question: " + number1 + " " + operator + " " + number2);
@@ -61,7 +64,7 @@ public class Engine {
                 break;
             }
         }
-        if (countCorrectAnswers == 3) {
+        if (countCorrectAnswers == bound) {
             System.out.println("Congratulations, " + name + "!");
         }
     }
@@ -70,9 +73,11 @@ public static void gcdGame(Scanner scanner, String name) {
     System.out.println("Find the greatest common divisor of given numbers.");
     Random random = new Random();
     int rightAnswersCount = 0;
-    for (int i = 0; i < 3; i++) {
-        int number1 = random.nextInt(100);
-        int number2 = random.nextInt(100);
+    int bound = 3;
+    int boundariesForRandom = 100;
+    for (int i = 0; i < bound; i++) { // 3 means that we count until 3 right results
+        int number1 = random.nextInt(boundariesForRandom);
+        int number2 = random.nextInt(boundariesForRandom);
         int rightAnswer = calculateGCD(number1, number2);
         System.out.println("Question: " + number1 + " " + number2);
         System.out.println("Your answer: ");
@@ -86,7 +91,7 @@ public static void gcdGame(Scanner scanner, String name) {
             break;
         }
     }
-    if (rightAnswersCount == 3) {
+    if (rightAnswersCount == bound) {
         System.out.println("Congratulations, " + name + "!");
     }
 }
@@ -95,10 +100,14 @@ public static void progressionGame(Scanner scanner, String name) {
     System.out.println("What number is missing in the progression?");
     Random random = new Random();
     int theRightResult = 0;
-    for (int i = 0; i < 3; i++) {
-        int startNumber = random.nextInt(50);
-        int step = random.nextInt(10) + 1;
-        int length = random.nextInt(6) + 5;
+    int bound = 3;
+    int boundariesForStartNumber = 50;
+    int boundariesForStep = 10;
+    int boundariesForLength = 6;
+    for (int i = 0; i < bound; i++) { // 3 means that we count until 3 right results
+        int startNumber = random.nextInt(boundariesForStartNumber);
+        int step = random.nextInt(boundariesForStep) + 1;
+        int length = random.nextInt(boundariesForLength) + 5;
         int hiddenN = random.nextInt(length);
         int[] progression = generateArithmeticProgression(startNumber, step, length);
         progression[hiddenN] = -1;
@@ -116,7 +125,7 @@ public static void progressionGame(Scanner scanner, String name) {
             break;
         }
     }
-    if (theRightResult == 3) {
+    if (theRightResult == bound) {
         System.out.println("Congratulations, " + name + "!");
     }
 }
@@ -126,8 +135,10 @@ public static void primeGame(Scanner scanner, String name) {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         Random random = new Random();
         int rightAnswersOnly = 0;
-        for (int i = 0; i < 3; i++) {
-            int number = random.nextInt(100);
+        int boundaries = 100;
+        int bound = 3;
+        for (int i = 0; i < bound; i++) {
+            int number = random.nextInt(boundaries);
             System.out.println("Question: " + number);
             System.out.println("Your answer: ");
             String answerOfUser = scanner.next();
@@ -140,7 +151,7 @@ public static void primeGame(Scanner scanner, String name) {
                 break;
             }
         }
-            if (rightAnswersOnly == 3) {
+            if (rightAnswersOnly == bound) {
                 System.out.println("Congratulations, " + name + "!");
             }
         }
