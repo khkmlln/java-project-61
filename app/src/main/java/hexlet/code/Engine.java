@@ -7,6 +7,9 @@ public class Engine {
     private static final int START = 50;
     private static final int STEP = 10;
     private static final int LENGTH = 6;
+    private static final int OPERATOR = 3;
+    private static final int MAXSTEPS = 1;
+    private static final int MAXLENGTH = 5;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -103,8 +106,8 @@ public static void progressionGame(Scanner scanner, String name) {
     int theRightResult = 0;
     for (int i = 0; i < BOUND; i++) { // 3 means that we count until 3 right results
         int startNumber = random.nextInt(START);
-        int step = random.nextInt(STEP) + 1;
-        int length = random.nextInt(LENGTH) + 5;
+        int step = random.nextInt(STEP) + MAXSTEPS;
+        int length = random.nextInt(LENGTH) + MAXLENGTH;
         int hiddenN = random.nextInt(length);
         int[] progression = generateArithmeticProgression(startNumber, step, length);
         progression[hiddenN] = -1;
@@ -154,7 +157,7 @@ public static void primeGame(Scanner scanner, String name) {
         }
     private static char getRandomOperator() {
         Random random = new Random();
-        int varietyOfOperator = random.nextInt(3);
+        int varietyOfOperator = random.nextInt(OPERATOR);
         if (varietyOfOperator == 0) {
             return '+';
         } else if (varietyOfOperator == 1) {
