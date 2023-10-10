@@ -2,11 +2,11 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.Random;
 public class Engine {
-    private final static int BOUND = 3;
-    private final static int HUNDRED = 100;
-    private final static int START = 50;
-    private final static int STEP = 10;
-    private final static int LENGTH = 6;
+    private static final  int BOUND = 3;
+    private static final int HUNDRED = 100;
+    private static final int START = 50;
+    private static final int STEP = 10;
+    private static final int LENGTH = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
