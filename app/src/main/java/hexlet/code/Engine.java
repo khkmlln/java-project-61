@@ -2,6 +2,11 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.Random;
 public class Engine {
+    private final static int BOUND = 3;
+    private final static int HUNDRED = 100;
+    private final static int START = 50;
+    private final static int STEP = 10;
+    private final static int LENGTH = 6;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -14,11 +19,6 @@ public class Engine {
         progressionGame(scanner, name);
         System.out.println("Congratulations, " + name);
     }
-    private final static int BOUND = 3;
-    private final static int HUNDRED = 100;
-    private final static int START = 50;
-    private final static int STEP = 10;
-    private final static int LENGTH = 6;
     public static void playEvenGame(Scanner scanner, String name) {
         System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
