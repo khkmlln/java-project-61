@@ -189,6 +189,7 @@ public static void primeGame(Scanner scanner, String name) {
         } else {
             return '*';
         }
+
     }
 
     private static int calculateExpression(int number1, int number2, char operator) {
