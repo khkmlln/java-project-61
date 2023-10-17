@@ -10,6 +10,29 @@ public class Engine {
     private static final int OPERATOR = 3;
     private static final int MAXSTEPS = 1;
     private static final int MAXLENGTH = 5;
+    public static void run(String description, String[][] roundsData) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String name = scanner.next();
+        System.out.println("Hello, " + name + "!");
+        System.out.println(description);
+        for (int i = 0; i < 3; i++) {
+            String question = roundsData[i][0];
+            String correctAnswer = roundsData[0][i];
+            System.out.println("Question: " + question);
+            System.out.println("Answer: ");
+            String userAnswer = scanner.next();
+            if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
+                String part1 = ("'" + userAnswer + "'" + "is wrong answer ;(. Correct answer was");
+                System.out.println(part1 + "'" + correctAnswer + "'");
+                System.out.println("Let's try again, " + name + "!");
+                break;
+            }
+            System.out.println("Correct!");
+        }
+        System.out.println("Congratulations, " + name + ",");
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!");
@@ -22,6 +45,7 @@ public class Engine {
         progressionGame(scanner, name);
         System.out.println("Congratulations, " + name);
     }
+
     public static void playEvenGame(Scanner scanner, String name) {
         System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");

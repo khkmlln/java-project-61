@@ -2,14 +2,15 @@ package hexlet.code;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Even {
+public class EvenGame {
+    private static final int BOUND = 100;
     private static boolean isEven(int number) {
        return number % 2 == 0; // тут проверяем что четное или нечетное и возвращаем boolean
     }
 
     private static String[] generateRoundData() {
         Random random = new Random();
-        int number = random.nextInt(100);// генерируем случайное число;
+        int number = random.nextInt(BOUND);// генерируем случайное число;
         String question = String.valueOf(number);// конвертируем в строку;
         String answer = isEven(number) ? "yes" : "no";// вычисляем правильный ответ для числа - "yes"|"no";
         return new String[] {question, answer}; // тут метод возвращает одномерный массив [5, "no"]
@@ -40,7 +41,7 @@ public class Even {
             System.out.println("Answer: ");
             String userAnswer = scanner.next();
             if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
-                String part1 = ("'" + userAnswer + "'" + "is wrong answer ;(. Correct answer was");
+                String part1 = ("'" + userAnswer + "'" + "is wrong answer ;(. Correct answer was ");
                 System.out.println(part1 + "'" + correctAnswer + "'");
                 System.out.println("Let's try again, " + name + "!");
                 break;
