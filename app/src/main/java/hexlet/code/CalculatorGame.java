@@ -13,7 +13,13 @@ public class CalculatorGame {
         String question = number1 + " " + getRandomOperator() + " " + number2;
         String answer = calculate(getRandomOperator(), number1, number2);
         return new String[]{question, answer};
+    }
         public static void runGame() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Welcome to the Brain Games!");
+            System.out.println("May I have your name?");
+            String name = scanner.next();
+            System.out.println("Hello, " + name + "!");
             final var description = "What is the result of the expression?";
             String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
@@ -26,7 +32,7 @@ public class CalculatorGame {
 
             Engine.run(description, roundsData);
         }
-    }
+
 
     private static String getRandomOperator() {
         Random random = new Random();

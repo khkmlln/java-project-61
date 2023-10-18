@@ -15,7 +15,7 @@ public class App {
         int choice = scanner.nextInt();
         String name;
         switch (choice) {
-            case '1':
+            case 1:
             System.out.println("Your choice is 1");
             Cli.greetUser();
             break;
@@ -23,34 +23,34 @@ public class App {
             System.out.println("Your choice is 0");
             System.out.println("Bye");
             break;
-            case '2':
+            case 2:
             System.out.println("Your choice is 2");
             System.out.println("Welcome to the Brain Games!");
             System.out.println("May i have your name?");
             name = scanner.next();
             Engine.playEvenGame(scanner, name);
             break;
-            case '3':
+            case 3:
             System.out.println("Your choice is 3");
             System.out.println("Welcome to the Brain Games!");
             System.out.println("May i have your name?");
             name = scanner.next();
             Engine.calculatorGame(scanner, name);
-            case '4':
+            case 4:
             System.out.println("Your choice is 4");
             System.out.println("Welcome to the Brain games!");
             System.out.println("May i have your name?");
             name = scanner.next();
             Engine.gcdGame(scanner, name);
             break;
-            case '5':
+            case 5:
             System.out.println("Your choice is 5");
             System.out.println("Welcome to the Brain games!");
             System.out.println("May i have your name?");
             name = scanner.next();
             Engine.progressionGame(scanner, name);
             break;
-            case '6':
+            case 6:
             System.out.println("Your choice is 6");
             System.out.println("Welcome to the Brain games!");
             System.out.println("May i have your name?");
