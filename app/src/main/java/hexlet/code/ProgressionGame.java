@@ -29,7 +29,8 @@ public class ProgressionGame {
     }
 
     public static void runGame() {
-        String[][] roundsData = new String[3][2];
+        final var description = "What number is missing in the progression?";
+                String[][] roundsData = new String[3][2];
         for (int i = 0; i < 3; i += 1) {
             roundsData[i] = generateRoundData();
         }

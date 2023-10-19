@@ -18,11 +18,6 @@ public class EvenGame {
     }
 
     public static void runGame() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String name = scanner.next();
-        System.out.println("Hello, " + name + "!");
         final var description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]

@@ -15,6 +15,7 @@ public class CalculatorGame {
         return new String[]{question, answer};
     }
     public static void runGame() {
+        final var description = "What is the result of the expression?";
         String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < 3; i += 1) {

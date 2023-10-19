@@ -22,6 +22,7 @@ public class NodGame {
     }
 
     public static void runGame() {
+        final var description = "Find the greatest common divisor of given numbers.";
         String[][] roundsData = new String[3][2];
         for (int i = 0; i < 3; i += 1) {
             roundsData[i] = generateRoundData();

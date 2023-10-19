@@ -27,6 +27,7 @@ public class PrimeGame {
     }
 
     public static void runGame() {
+        final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < 3; i += 1) {
