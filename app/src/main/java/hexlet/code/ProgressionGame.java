@@ -29,12 +29,6 @@ public class ProgressionGame {
     }
 
     public static void runGame() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String name = scanner.next();
-        System.out.println("Hello, " + name + "!");
-        final String description = "What number is missing in the progression?";
         String[][] roundsData = new String[3][2];
         for (int i = 0; i < 3; i += 1) {
             roundsData[i] = generateRoundData();
