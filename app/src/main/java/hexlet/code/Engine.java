@@ -9,9 +9,10 @@ public class Engine {
         String name = scanner.next();
         System.out.println("Hello, " + name + "!");
         System.out.println(description);
+        int incorrectAnswer = 0;
         for (int i = 0; i < 3; i++) {
             String question = roundsData[i][0];
-            String correctAnswer = roundsData[0][i];
+            String correctAnswer = roundsData[i][1];
             System.out.println("Question: " + question);
             System.out.println("Answer: ");
             String userAnswer = scanner.next();
@@ -19,10 +20,13 @@ public class Engine {
                 String part1 = ("'" + userAnswer + "'" + "is wrong answer ;(. Correct answer was");
                 System.out.println(part1 + "'" + correctAnswer + "'");
                 System.out.println("Let's try again, " + name + "!");
+                incorrectAnswer++;
                 break;
             }
             System.out.println("Correct!");
         }
-        System.out.println("Congratulations, " + name + ",");
+        if (incorrectAnswer == 0) {
+            System.out.println("Congratulations, " + name + "!");
+        }
     }
 }

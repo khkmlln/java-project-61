@@ -10,8 +10,9 @@ public class CalculatorGame {
         Random random = new Random();
         int number1 = random.nextInt(BOUND);
         int number2 = random.nextInt(BOUND);
-        String question = number1 + " " + getRandomOperator() + " " + number2;
-        String answer = calculate(getRandomOperator(), number1, number2);
+        String operator = getRandomOperator();
+        String question = number1 + " " + operator + " " + number2;
+        String answer = calculate(operator, number1, number2);
         return new String[]{question, answer};
     }
     public static void runGame() {

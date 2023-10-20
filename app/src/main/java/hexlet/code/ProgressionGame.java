@@ -1,6 +1,5 @@
 package hexlet.code;
 import java.util.Random;
-import java.util.Scanner;
 public class ProgressionGame {
     private static final int BOUND = 100;
     private static final int MAXLENGTH = 5;

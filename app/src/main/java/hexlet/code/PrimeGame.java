@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import java.util.Random;
-import java.util.Scanner;
 
 public class PrimeGame {
     private static final int BOUND = 100;

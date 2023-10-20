@@ -29,6 +29,15 @@ public class App {
             case "3":
                 CalculatorGame.runGame();
                 break;
+            case "4":
+                NodGame.runGame();
+                break;
+            case "5":
+                ProgressionGame.runGame();
+                break;
+            case "6":
+                PrimeGame.runGame();
+                break;
         }
 
         scanner.close();
