@@ -5,6 +5,8 @@ public class CalculatorGame {
     private static final int BOUND = 100;
     private static final int OPERATOR = 3;
     private static final int RIGHTNUMBER = 3;
+    private static final int ARRAYCOLUMNS = 3;
+    private static final int ARRAYLINE = 2;
 
     private static String[] generateRoundData() {
         Random random = new Random();
@@ -17,7 +19,7 @@ public class CalculatorGame {
     }
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
+        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData(); // записываем в массив 3 на 2 результат генерации раунда

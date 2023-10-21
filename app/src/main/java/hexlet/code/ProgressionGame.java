@@ -5,6 +5,8 @@ public class ProgressionGame {
     private static final int MAXLENGTH = 5;
     private static final int MINLENGTH = 10;
     private static final int RIGHTNUMBER = 3;
+    private static final int ARRAYCOLUMNS = 3;
+    private static final int ARRAYLINE = 2;
 
 
     private static String[] generateRoundData() {
@@ -30,7 +32,7 @@ public class ProgressionGame {
 
     public static void runGame() {
         final var description = "What number is missing in the progression?";
-                String[][] roundsData = new String[3][2];
+                String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE];
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();
         }

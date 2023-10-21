@@ -4,6 +4,8 @@ import java.util.Random;
 public class EvenGame {
     private static final int BOUND = 100;
     private static final int RIGHTNUMBER = 3;
+    private static final int ARRAYCOLUMNS = 3;
+    private static final int ARRAYLINE = 2;
 
     private static boolean isEven(int number) {
         return number % 2 == 0; // тут проверяем что четное или нечетное и возвращаем boolean
@@ -20,7 +22,7 @@ public class EvenGame {
     public static void runGame() {
         final var description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
+        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData(); // записываем в массив 3 на 2 результат генерации раунда
