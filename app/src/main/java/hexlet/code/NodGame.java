@@ -16,9 +16,9 @@ public class NodGame {
         Random random = new Random();
         int number1 = random.nextInt(BOUND);
         int number2 = random.nextInt(BOUND);
-        int GCD = calculateGcd(number1, number2);
+        int gcd = calculateGcd(number1, number2);
         String question = number1 + " " + number2;
-        String answer = String.valueOf(GCD);
+        String answer = String.valueOf(gcd);
         return new String[]{question, answer};
     }
 
