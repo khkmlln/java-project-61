@@ -1,57 +1,48 @@
 package hexlet.code;
+
 import java.util.Scanner;
+
 public class App {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter the game number and press Enter");
+        System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
-        System.out.println("3 - Calculator");
+        System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
         System.out.println("6 - Prime");
         System.out.println("0 - Exit");
-        System.out.println("Your choice: ");
-        int choice = scanner.nextInt();
-        if (choice == 1) {
-            System.out.println("Your choice is 1");
-            Cli.greetUser();
-        } else if (choice == 0) {
-            System.out.println("Your choice is 0");
-            System.out.println("Bye");
-        } else if (choice == 2) {
-            System.out.println("Your choice is 2");
-            System.out.println("Welcome to the Brain Games!");
-            System.out.println("May i have your name?");
-            String name = scanner.next();
-            Engine.playEvenGame(scanner, name);
-        } else if (choice == 3) {
-            System.out.println("Your choice is 3");
-            System.out.println("Welcome to the Brain Games!");
-            System.out.println("May i have your name?");
-            String name = scanner.next();
-            Engine.calculatorGame(scanner, name);
-        } else if (choice == 4) {
-            System.out.println("Your choice is 4");
-            System.out.println("Welcome to the Brain games!");
-            System.out.println("May i have your name?");
-            String name = scanner.next();
-            Engine.gcdGame(scanner, name);
-        } else if (choice == 5) {
-            System.out.println("Your choice is 5");
-            System.out.println("Welcome to the Brain games!");
-            System.out.println("May i have your name?");
-            String name = scanner.next();
-            Engine.progressionGame(scanner, name);
-        } else if (choice == 6) {
-            System.out.println("Your choice is 6");
-            System.out.println("Welcome to the Brain games!");
-            System.out.println("May i have your name?");
-            String name = scanner.next();
-            Engine.primeGame(scanner, name);
-        } else {
-            System.out.println("Please, make sure that you chose the right number");
+        System.out.print("Your choice: ");
+
+        Scanner scanner = new Scanner(System.in);
+        String selectedGame = scanner.next();
+        System.out.println();
+
+        switch (selectedGame) {
+            case "1":
+                Cli.greetUser();
+                break;
+            case "2":
+                EvenGame.runGame();
+                break;
+            case "3":
+                CalculatorGame.runGame();
+                break;
+            case "4":
+                NodGame.runGame();
+                break;
+            case "5":
+                ProgressionGame.runGame();
+                break;
+            case "6":
+                PrimeGame.runGame();
+                break;
+            default:
+                System.out.println("Please, make sure that you chose the right number!");
+                break;
         }
+
+        scanner.close();
     }
 }
-
