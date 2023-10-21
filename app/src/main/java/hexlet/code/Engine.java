@@ -1,6 +1,7 @@
 package hexlet.code;
 import java.util.Scanner;
 public class Engine {
+    private static final int RIGHTNUMBER = 3;
 
     public static void run(String description, String[][] roundsData) {
         Scanner scanner = new Scanner(System.in);
@@ -10,7 +11,7 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(description);
         int incorrectAnswer = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < RIGHTNUMBER; i++) {
             String question = roundsData[i][0];
             String correctAnswer = roundsData[i][1];
             System.out.println("Question: " + question);

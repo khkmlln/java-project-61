@@ -5,11 +5,11 @@ public class NodGame {
     private static final int RIGHTNUMBER = 3;
     private static final int ARRAYCOLUMNS = 3;
     private static final int ARRAYLINE = 2;
-    private static int GCDgame(int number1, int number2) {
+    private static int gcdGame(int number1, int number2) {
         if (number2 == 0) {
             return number1;
         }
-        return GCDgame(number2, number1 % number2);
+        return gcdGame(number2, number1 % number2);
     }
 
     private static String[] generateRoundData() {

@@ -37,7 +37,7 @@ public class CalculatorGame {
         int operatorIndex = random.nextInt(OPERATOR);
         String[] operators = {"+", "-", "*"};
         return operators[operatorIndex];
-    }
+     }
     private static String calculate(String operator, int number1, int number2) {
         switch (operator){
             case "+":
