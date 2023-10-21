@@ -4,6 +4,7 @@ public class ProgressionGame {
     private static final int BOUND = 100;
     private static final int MAXLENGTH = 5;
     private static final int MINLENGTH = 10;
+    private static final int RIGHTNUMBER = 3;
 
 
     private static String[] generateRoundData() {
@@ -30,7 +31,7 @@ public class ProgressionGame {
     public static void runGame() {
         final var description = "What number is missing in the progression?";
                 String[][] roundsData = new String[3][2];
-        for (int i = 0; i < 3; i += 1) {
+        for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

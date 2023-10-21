@@ -1,9 +1,9 @@
 package hexlet.code;
-
 import java.util.Random;
 
 public class PrimeGame {
     private static final int BOUND = 100;
+    private static final int RIGHTNUMBER = 3;
 
     public static boolean isPrime(int number) {
         if (number <= 1) {
@@ -29,7 +29,7 @@ public class PrimeGame {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[][] roundsData = new String[3][2]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
 
-        for (int i = 0; i < 3; i += 1) {
+        for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);

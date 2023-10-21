@@ -1,9 +1,8 @@
 package hexlet.code;
 import java.util.Random;
-import java.util.Scanner;
 public class NodGame {
     private static final int BOUND = 100;
-
+    private static final int RIGHTNUMBER = 3;
     private static int GCDgame(int number1, int number2) {
         if (number2 == 0) {
             return number1;
@@ -24,7 +23,7 @@ public class NodGame {
     public static void runGame() {
         final var description = "Find the greatest common divisor of given numbers.";
         String[][] roundsData = new String[3][2];
-        for (int i = 0; i < 3; i += 1) {
+        for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();
         }
         Engine.run(description, roundsData);
