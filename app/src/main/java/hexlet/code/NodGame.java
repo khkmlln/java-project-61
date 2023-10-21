@@ -16,7 +16,7 @@ public class NodGame {
         Random random = new Random();
         int number1 = random.nextInt(BOUND);
         int number2 = random.nextInt(BOUND);
-        int GCD = calculateGCD(number1, number2);
+        int GCD = calculateGcd(number1, number2);
         String question = number1 + " " + number2;
         String answer = String.valueOf(GCD);
         return new String[]{question, answer};
@@ -31,7 +31,7 @@ public class NodGame {
         Engine.run(description, roundsData);
     }
 
-    public static int calculateGCD(int number1, int number2) {
+    public static int calculateGcd(int number1, int number2) {
         while (number2 != 0) {
             int temp = number2;
             number2 = number1 % number2;

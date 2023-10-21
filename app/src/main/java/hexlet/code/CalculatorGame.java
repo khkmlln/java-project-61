@@ -19,7 +19,8 @@ public class CalculatorGame {
     }
     public static void runGame() {
         final var description = "What is the result of the expression?";
-        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
+        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив размера
+        // число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData(); // записываем в массив 3 на 2 результат генерации раунда
@@ -39,7 +40,7 @@ public class CalculatorGame {
         return operators[operatorIndex];
      }
     private static String calculate(String operator, int number1, int number2) {
-        switch (operator){
+        switch (operator) {
             case "+":
                 return String.valueOf(number1 + number2);
             case "-":

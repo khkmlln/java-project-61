@@ -22,14 +22,15 @@ public class PrimeGame {
     public static String[] generateRoundData() {
         Random random = new Random();
         int number = random.nextInt(BOUND);
-        String question = String.valueOf(number);// конвертируем в строку;
+        String question = String.valueOf(number); // конвертируем в строку;
         String answer = isPrime(number) ? "yes" : "no";
         return new String[]{question, answer}; // тут метод возвращает одномерный массив [5, "no"]
     }
 
     public static void runGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив размера число 3 на 2 [ [], [], [] ]
+        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив
+        // размера число 3 на 2 [ [], [], [] ]
 
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();
