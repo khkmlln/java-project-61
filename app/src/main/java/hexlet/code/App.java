@@ -21,7 +21,7 @@ public class App {
 
         switch (selectedGame) {
             case "1":
-                Cli.greetUser();;
+                Cli.greetUser();
                 break;
             case "2":
                 EvenGame.runGame();
@@ -37,6 +37,9 @@ public class App {
                 break;
             case "6":
                 PrimeGame.runGame();
+                break;
+            default:
+                System.out.println("Please, make sure that you chose the right number!");
                 break;
         }
 
