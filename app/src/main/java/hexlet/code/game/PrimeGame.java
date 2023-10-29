@@ -1,6 +1,6 @@
-package hexlet.code;
-import java.util.Random;
-
+package hexlet.code.game;
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 public class PrimeGame {
     private static final int BOUND = 100;
     private static final int RIGHTNUMBER = 3;
@@ -20,17 +20,15 @@ public class PrimeGame {
     }
 
     public static String[] generateRoundData() {
-        Random random = new Random();
-        int number = random.nextInt(BOUND);
-        String question = String.valueOf(number); // конвертируем в строку;
+        int number = Utils.generateNumber(0, BOUND);
+        String question = String.valueOf(number);
         String answer = isPrime(number) ? "yes" : "no";
-        return new String[]{question, answer}; // тут метод возвращает одномерный массив [5, "no"]
+        return new String[]{question, answer};
     }
 
     public static void runGame() {
         final var description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE]; // создаем пустой массив
-        // размера число 3 на 2 [ [], [], [] ]
+        String[][] roundsData = new String[ARRAYCOLUMNS][ARRAYLINE];
 
         for (int i = 0; i < RIGHTNUMBER; i += 1) {
             roundsData[i] = generateRoundData();

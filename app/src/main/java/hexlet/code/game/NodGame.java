@@ -1,5 +1,6 @@
-package hexlet.code;
-import java.util.Random;
+package hexlet.code.game;
+import hexlet.code.Engine;
+import hexlet.code.Utils;
 public class NodGame {
     private static final int BOUND = 100;
     private static final int RIGHTNUMBER = 3;
@@ -13,9 +14,8 @@ public class NodGame {
     }
 
     private static String[] generateRoundData() {
-        Random random = new Random();
-        int number1 = random.nextInt(BOUND);
-        int number2 = random.nextInt(BOUND);
+        int number1 = Utils.generateNumber(0, BOUND);
+        int number2 = Utils.generateNumber(0, BOUND);
         int gcd = calculateGcd(number1, number2);
         String question = number1 + " " + number2;
         String answer = String.valueOf(gcd);
