@@ -12,27 +12,18 @@ public class ProgressionGame {
 
     private static String[] generateRoundData() {
         int length = Utils.generateNumber(MINLEGTH, MAXLENGTH);
-        int hidden = Utils.generateNumber(MAXLENGTH, MINLEGTH);
+        int hidden = Utils.generateNumber(0, length - 1);
         int start = Utils.generateNumber(0, BOUND);
         int step = Utils.generateNumber(0, BOUND);
-        String[] progression = new String[length];
-        int currentNumber = start;
-        for (int i = 0; i < length; i++) {
-            if (i == hidden) {
-                progression[i] = "..";
-            } else {
-                progression[i] = String.valueOf(currentNumber);
-            }
-            currentNumber += step;
-        }
+        String[] progression = makeProgression(start, step, length);
+        progression[hidden] = "..";
         return progression;
-        }
+    }
         private static String generateQuestion(String[] progression) {
         return String.join(" ", progression);
         }
-        private static String generateAnswer(String[] progression, int hiddenIndex, int start, int step) {
-            int hiddenNumber = start + hiddenIndex * step;
-            return String.valueOf(hiddenNumber);
+        private static String generateAnswer(String[] progression, int hiddenIndex) {
+            return progression[hiddenIndex];
         }
     public static void runGame() {
         final var description = "What number is missing in the progression?";
@@ -40,10 +31,8 @@ public class ProgressionGame {
         for (int i = 0; i < RIGHTNUMBER; i++) {
             String[] progression = generateRoundData();
             int hiddenIndex = findHiddenIndex(progression);
-            int start = Integer.parseInt(progression[0]);
-            int step = Integer.parseInt(progression[1]) - Integer.parseInt(progression[0]);
             String question = generateQuestion(progression);
-            String answer = generateAnswer(progression, hiddenIndex, start, step);
+            String answer = generateAnswer(progression, hiddenIndex);
             roundsData[i] = new String[]{question, answer};
         }
         Engine.run(description, roundsData);
@@ -55,6 +44,15 @@ public class ProgressionGame {
             }
         }
         return -1;
+    }
+    private static String[] makeProgression(int first, int step, int length) {
+String[] progression = new String[length];
+int currentNumber = first;
+for (int i = 0; i < length; i++) {
+    progression[i] = String.valueOf(currentNumber);
+    currentNumber = currentNumber + step;
+}
+return progression;
     }
 }
 
