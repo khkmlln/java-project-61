@@ -3,21 +3,22 @@ import hexlet.code.Utils;
 import hexlet.code.Engine;
 public class ProgressionGame {
     private static final int BOUND = 100;
-    private static final int MINLEGTH = 5;
-    private static final int MAXLENGTH = 10;
+    private static final int PROGRESSIONLENGTH = 5;
     private static final int RIGHTNUMBER = 3;
     private static final int ARRAYCOLUMNS = 3;
     private static final int ARRAYLINE = 2;
+    private static final int FIRSTBOUND = 1;
 
 
     private static String[] generateRoundData() {
-        int length = Utils.generateNumber(MINLEGTH, MAXLENGTH);
-        int hidden = Utils.generateNumber(0, length - 1);
-        int start = Utils.generateNumber(0, BOUND);
-        int step = Utils.generateNumber(0, BOUND);
-        String[] progression = makeProgression(start, step, length);
+        var start  = Utils.generateNumber(FIRSTBOUND, BOUND);
+        var step = Utils.generateNumber(FIRSTBOUND, BOUND);
+        var hidden = Utils.generateNumber(0, PROGRESSIONLENGTH - 1);
+        String[] progression = makeProgression(start, step, hidden);
+        var answer = progression[hidden];
         progression[hidden] = "..";
-        return progression;
+        var question = String.join(" ", progression);
+        return new String[] {question, answer};
     }
         private static String generateQuestion(String[] progression) {
         return String.join(" ", progression);
@@ -47,10 +48,8 @@ public class ProgressionGame {
     }
     private static String[] makeProgression(int first, int step, int length) {
 String[] progression = new String[length];
-int currentNumber = first;
 for (int i = 0; i < length; i++) {
-    progression[i] = String.valueOf(currentNumber);
-    currentNumber = currentNumber + step;
+    progression[i] = Integer.toString(first + i * step);
 }
 return progression;
     }

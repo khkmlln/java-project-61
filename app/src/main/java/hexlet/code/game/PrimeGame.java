@@ -3,6 +3,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 public class PrimeGame {
     private static final int BOUND = 100;
+    private static final int FIRSTBOUND = 0;
     private static final int RIGHTNUMBER = 3;
     private static final int ARRAYCOLUMNS = 3;
     private static final int ARRAYLINE = 2;
@@ -20,7 +21,7 @@ public class PrimeGame {
     }
 
     public static String[] generateRoundData() {
-        int number = Utils.generateNumber(0, BOUND);
+        int number = Utils.generateNumber(FIRSTBOUND, BOUND);
         String question = String.valueOf(number);
         String answer = isPrime(number) ? "yes" : "no";
         return new String[]{question, answer};

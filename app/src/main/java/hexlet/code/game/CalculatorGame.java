@@ -5,14 +5,15 @@ import java.util.Random;
 
 public class CalculatorGame {
     private static final int BOUND = 100;
+    private static final int FIRSTBOUND = 1;
     private static final int OPERATOR = 3;
     private static final int RIGHTNUMBER = 3;
     private static final int ARRAYCOLUMNS = 3;
     private static final int ARRAYLINE = 2;
 
     private static String[] generateRoundData() {
-        int number1 = Utils.generateNumber(0, BOUND);
-        int number2 = Utils.generateNumber(0, BOUND);
+        var number1 = Utils.generateNumber(FIRSTBOUND, BOUND);
+        int number2 = Utils.generateNumber(FIRSTBOUND, BOUND);
         String operator = getRandomOperator();
         String question = number1 + " " + operator + " " + number2;
         String answer = String.valueOf(calculate(operator, number1, number2));
@@ -48,8 +49,8 @@ public class CalculatorGame {
         }
     }
     static class UtilsFor {
-        private static Random random = new Random();
         public static int generateNumber(int number1, int number2) {
+            Random random = new Random();
             return random.nextInt((number2 - number1 + 1)) + number1;
         }
     }
