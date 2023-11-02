@@ -12,7 +12,7 @@ public class EvenGame {
     }
 
     private static String[] generateRoundData() {
-        int number =Utils.generateNumber(0, BOUND);
+        int number = Utils.generateNumber(0, BOUND);
         String question = String.valueOf(number);
         String answer = isEven(number) ? "yes" : "no";
         return new String[]{question, answer};
