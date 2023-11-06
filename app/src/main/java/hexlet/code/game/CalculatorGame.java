@@ -1,7 +1,6 @@
 package hexlet.code.game;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import java.util.Random;
 
 public class CalculatorGame {
     private static final int BOUND = 100;
@@ -32,7 +31,7 @@ public class CalculatorGame {
 
 
     private static String getRandomOperator() {
-        int operatorIndex = UtilsFor.generateNumber(0, OPERATOR - 1);
+        int operatorIndex = Utils.generateNumber(0, OPERATOR - 1);
         String[] operators = {"+", "-", "*"};
         return operators[operatorIndex];
      }
@@ -46,12 +45,6 @@ public class CalculatorGame {
                 return number1 * number2;
             default:
                 return 0;
-        }
-    }
-    static class UtilsFor {
-        public static int generateNumber(int number1, int number2) {
-            Random random = new Random();
-            return random.nextInt((number2 - number1 + 1)) + number1;
         }
     }
 }
